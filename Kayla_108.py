@@ -1,8 +1,8 @@
-#tabungan tanpa setoran
+#menu tabungan tanpa setoran
 def tabungan_tanpa_setoran(a, bunga, bulan):
     return a * (1 + bunga) ** bulan
 
-#menu tanpa setoran
+#menu lihat investasi tanpa setoran
 def sub_menu_tanpa_setoran(modal, bunga_bulanan, bunga_tahunan, total_bulan):
     """Sub-menu lanjutan setelah input menu 1"""
     saldo_skrg  = tabungan_tanpa_setoran(modal, bunga_bulanan, total_bulan)
@@ -74,4 +74,5 @@ def cari_target_setoran(setoran, bunga_bulanan):
     else:
         print("  [!] Target tidak tercapai dalam 100 tahun dengan kondisi ini.")
     garis("=")
+
     input("\n  Tekan Enter untuk lanjut...")
