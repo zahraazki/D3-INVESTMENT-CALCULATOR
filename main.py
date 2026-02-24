@@ -1,10 +1,12 @@
 # MAIN
+
+  import Abdilla_094
+  import Ghevira_103
+  import Irham_104
+  import Kayla_108
+  import Zahra_124
+
 def main():
-  import Abdilla_094.py
-  import Ghevira_103.py
-  import Irham_104.py
-  import Kayla_108.py
-  import Zahra_124.py
     while True:
         print()
         garis("=")
