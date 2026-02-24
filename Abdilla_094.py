@@ -1,4 +1,3 @@
-
 def input_angka(prompt, min_val=0):
     while True:
         try:
@@ -10,8 +9,10 @@ def input_angka(prompt, min_val=0):
         except ValueError:
             print("  [!] Masukkan angka yang valid!")
 
-
 def cari_target_tanpa_setoran(modal, bunga_bulanan):
+    from Irham_104 import garis, W
+    from Zahra_124 import rp_short
+    from Kayla_108 import tabungan_tanpa_setoran
     print()
     garis("-")
     print("  CEK TARGET TABUNGAN".center(W))
@@ -20,7 +21,7 @@ def cari_target_tanpa_setoran(modal, bunga_bulanan):
 
     bulan_target = None
     saldo_target = None
-    for b in range(1, 12 * 100 + 1): 
+    for b in range(1, 12 * 100 + 1):
         saldo = tabungan_tanpa_setoran(modal, bunga_bulanan, b)
         if saldo >= target:
             bulan_target = b
@@ -47,8 +48,10 @@ def cari_target_tanpa_setoran(modal, bunga_bulanan):
     garis("=")
     input("\n  Tekan Enter untuk lanjut...")
 
-
 def menu_setoran_rutin():
+    from Irham_104 import garis, W
+    from Ghevira_103 import input_bulan
+    from Zahra_124 import sub_menu_setoran_rutin
     print()
     garis("=")
     print("  TABUNGAN INVESTASI DENGAN SETORAN RUTIN  ".center(W))
@@ -57,6 +60,4 @@ def menu_setoran_rutin():
     bunga_tahunan = input_angka("  Bunga/return per tahun (%)   : ", 0)
     total_bulan   = input_bulan("  Lama investasi (bulan)       : ")
     bunga_bulanan = (bunga_tahunan / 100) / 12
-
     sub_menu_setoran_rutin(setoran, bunga_bulanan, bunga_tahunan, total_bulan)
-
