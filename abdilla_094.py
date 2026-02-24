@@ -1,4 +1,8 @@
-
+import zahra_124
+import ghevira_103
+import kayla_108
+import abdilla_094
+import irham_104
 
 def input_angka(prompt, min_val=0):
     while True:
@@ -58,4 +62,5 @@ def menu_setoran_rutin():
     bunga_tahunan = input_angka("  Bunga/return per tahun (%)   : ", 0)
     total_bulan   = input_bulan("  Lama investasi (bulan)       : ")
     bunga_bulanan = (bunga_tahunan / 100) / 12
+
     sub_menu_setoran_rutin(setoran, bunga_bulanan, bunga_tahunan, total_bulan)
