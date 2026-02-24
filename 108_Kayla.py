@@ -37,7 +37,7 @@ def sub_menu_tanpa_setoran(modal, bunga_bulanan, bunga_tahunan, total_bulan):
         else:
             print("  [!] Pilihan tidak valid.")
 
-#cari target setoran
+#menu mengecek target setoran
 def cari_target_setoran(setoran, bunga_bulanan):
     print()
     garis("-")
@@ -74,4 +74,5 @@ def cari_target_setoran(setoran, bunga_bulanan):
     else:
         print("  [!] Target tidak tercapai dalam 100 tahun dengan kondisi ini.")
     garis("=")
+
     input("\n  Tekan Enter untuk lanjut...")
