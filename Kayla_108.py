@@ -1,8 +1,6 @@
-#fungsi tabungan tanpa setoran
 def tabungan_tanpa_setoran(a, bunga, bulan):
     return a * (1 + bunga) ** bulan
 
-#menu lihat investasi tanpa setoran
 def sub_menu_tanpa_setoran(modal, bunga_bulanan, bunga_tahunan, total_bulan):
     from Irham_104 import garis, W
     from Zahra_124 import rp_short
@@ -40,7 +38,6 @@ def sub_menu_tanpa_setoran(modal, bunga_bulanan, bunga_tahunan, total_bulan):
         else:
             print("  [!] Pilihan tidak valid.")
 
-#menu mencari target setoran
 def cari_target_setoran(setoran, bunga_bulanan):
     from Irham_104 import garis, W
     from Zahra_124 import rp_short
