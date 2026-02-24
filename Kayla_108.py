@@ -1,3 +1,13 @@
+<<<<<<< 108_Kayla
+def tabungan_tanpa_setoran(a, bunga, bulan):
+    return a * (1 + bunga) ** bulan
+
+def sub_menu_tanpa_setoran(modal, bunga_bulanan, bunga_tahunan, total_bulan):
+    from Irham_104 import garis, W
+    from Zahra_124 import rp_short
+    from Ghevira_103 import detail_pertumbuhan_tanpa_setoran
+    from Abdilla_094 import cari_target_tanpa_setoran
+=======
 #menu tabungan tanpa setoran
 def tabungan_tanpa_setoran(a, bunga, bulan):
     return a * (1 + bunga) ** bulan
@@ -5,6 +15,7 @@ def tabungan_tanpa_setoran(a, bunga, bulan):
 #menu hasil investasi tanpa setoran
 def sub_menu_tanpa_setoran(modal, bunga_bulanan, bunga_tahunan, total_bulan):
     """Sub-menu lanjutan setelah input menu 1"""
+>>>>>>> main
     saldo_skrg  = tabungan_tanpa_setoran(modal, bunga_bulanan, total_bulan)
     untung_skrg = tabungan_tanpa_setoran(modal, bunga_bulanan, total_bulan) - modal
 
@@ -37,8 +48,16 @@ def sub_menu_tanpa_setoran(modal, bunga_bulanan, bunga_tahunan, total_bulan):
         else:
             print("  [!] Pilihan tidak valid.")
 
+<<<<<<< 108_Kayla
+def cari_target_setoran(setoran, bunga_bulanan):
+    from Irham_104 import garis, W
+    from Zahra_124 import rp_short
+    from Ghevira_103 import tabungan_setoran
+    from Abdilla_094 import input_angka
+=======
 #menu mengecek target setoran
 def cari_target_setoran(setoran, bunga_bulanan):
+>>>>>>> main
     print()
     garis("-")
     print("  CEK TARGET TABUNGAN".center(W))
@@ -74,6 +93,10 @@ def cari_target_setoran(setoran, bunga_bulanan):
     else:
         print("  [!] Target tidak tercapai dalam 100 tahun dengan kondisi ini.")
     garis("=")
+<<<<<<< 108_Kayla
+    input("\n  Tekan Enter untuk lanjut...")
+=======
 
     input("\n  Tekan Enter untuk lanjut...")
 
+>>>>>>> main
