@@ -1,46 +1,32 @@
 def garis(char="="):
     print(char * W)
-
-def detail_pertumbuhan_tanpa_setoran(modal, bunga_bulanan, total_bulan):
-    print()
-    garis("-")
-    print("  DETAIL PERTUMBUHAN (RANGE BULAN)".center(W))
-    garis("-")
-    print(f"  Total bulan investasi: {total_bulan} bulan")
-    bulan_awal = input_bulan("  Tampilkan dari bulan ke  : ")
-    bulan_akhir = input_bulan("  Tampilkan sampai bulan ke: ")
-
-    if bulan_awal > bulan_akhir:
-        print("  [!] Bulan awal tidak boleh lebih besar dari bulan akhir.")
-        return
-    if bulan_akhir > total_bulan:
-        print(f"  [!] Melebihi batas investasi ({total_bulan} bulan), disesuaikan otomatis.")
-        bulan_akhir = total_bulan
-
+    
+#ditampilkan setelah memilih menu invest dengan setoran rutin -> submenu detail pertumbuhan dengan setoran
+def detail_pertumbuhan_setoran(setoran, bunga_bulanan, bunga_tahunan, total_bulan):
     print()
     garis("=")
-    print("  TABEL PERTUMBUHAN UANG PER BULAN".center(W))
-    print(f"  Modal Awal: {rp_short(modal)}   |   Bunga: {bunga_bulanan*12*100:.2f}%/tahun".center(W))
+    print("  TABEL DETAIL PERTUMBUHAN SETORAN RUTIN".center(W))
+    print(f"  Setoran: {rp_short(setoran)}/bln   |   Bunga: {bunga_tahunan}%/tahun   |   Durasi: {total_bulan} bulan".center(W))
     garis("=")
-    header = f"  {'Bulan':^6} | {'Modal':^20} | {'Total Uang':^20} | {'Keuntungan Bulan Ini':^22}"
+    header = f"  {'Bln':^4} | {'Setoran Bln':^18} | {'Total Disetor':^18} | {'Total Tabungan':^18} | {'Akum. Bunga':^16}"
     print(header)
     garis("-")
 
-    for b in range(bulan_awal, bulan_akhir + 1):
-        saldo_bulan  = tabungan_tanpa_setoran(modal, bunga_bulanan, b)
-        saldo_prev   = tabungan_tanpa_setoran(modal, bunga_bulanan, b - 1) if b > 1 else modal
-        untung_bulan = saldo_bulan - saldo_prev
-        print(f"  {b:^6} | {rp_short(modal):^20} | {rp_short(saldo_bulan):^20} | {rp_short(untung_bulan):^22}")
+    for b in range(1, total_bulan + 1):
+        saldo_b       = tabungan_setoran(setoran, bunga_bulanan, b)
+        total_setor_b = setoran * b
+        akum_bunga    = tabungan_setoran(setoran, bunga_bulanan, b) - setoran * b
+        print(f"  {b:^4} | {rp_short(setoran):^18} | {rp_short(total_setor_b):^18} | {rp_short(saldo_b):^18} | {rp_short(akum_bunga):^16}")
 
     garis("-")
-    saldo_akhir  = tabungan_tanpa_setoran(modal, bunga_bulanan, bulan_akhir)
-    untung_total = tabungan_tanpa_setoran(modal, bunga_bulanan, bulan_akhir) - modal
-    print(f"  {'TOTAL s/d bulan ' + str(bulan_akhir):<30}  {rp_short(saldo_akhir):^20}   {'Akum. Untung: ' + rp_short(untung_total)}")
+    saldo_akhir  = tabungan_setoran(setoran, bunga_bulanan, total_bulan)
+    untung_akhir = tabungan_setoran(setoran, bunga_bulanan, total_bulan) - setoran * total_bulan
+    total_setor  = setoran * total_bulan
+    print(f"  {'TOTAL AKHIR':<8}   {rp_short(setoran):^18}   {rp_short(total_setor):^18}   {rp_short(saldo_akhir):^18}   {rp_short(untung_akhir):^16}")
     garis("=")
     input("\n  Tekan Enter untuk lanjut...")
 
 # MAIN
-
 def main():
     while True:
         print()
