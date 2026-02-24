@@ -20,7 +20,7 @@ def detail_pertumbuhan_tanpa_setoran(modal, bunga_bulanan, total_bulan):
     garis("-")
     print("  DETAIL PERUMBUHAN (RANGE BULAN)".center(W))
     garis("-")
-    print(f"  Total bulan investasi: {total_bulan) bulan")
+    print(f"  Total bulan investasi: {total_bulan} bulan")
     bulan_awal = input_bulan(" Tampilkan dari bulan ke : ")
     bulan_akhir = input_bulan(" Tampilkan sampai bulan ke: ")
 
@@ -104,3 +104,4 @@ def sub_menu_setoran_rutin(setoran, bulanan, bunga_tahunan, total_bulan):
             break
         else:
             print(" [!] Pilihan tidak valid.")
+
