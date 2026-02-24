@@ -1,10 +1,6 @@
-# MAIN
-
-  import Abdilla_094
-  import Ghevira_103
-  import Irham_104
-  import Kayla_108
-  import Zahra_124
+from Irham_104 import garis, W
+from Abdilla_094 import menu_setoran_rutin
+from Zahra_124 import menu_tanpa_setoran
 
 def main():
     while True:
@@ -35,3 +31,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
