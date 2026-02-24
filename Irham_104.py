@@ -1,8 +1,11 @@
+W = 85
+
 def garis(char="="):
     print(char * W)
-    
-#ditampilkan setelah memilih menu invest dengan setoran rutin -> submenu detail pertumbuhan dengan setoran
+
 def detail_pertumbuhan_setoran(setoran, bunga_bulanan, bunga_tahunan, total_bulan):
+    from Zahra_124 import rp_short
+    from Ghevira_103 import tabungan_setoran
     print()
     garis("=")
     print("  TABEL DETAIL PERTUMBUHAN SETORAN RUTIN".center(W))
@@ -11,13 +14,11 @@ def detail_pertumbuhan_setoran(setoran, bunga_bulanan, bunga_tahunan, total_bula
     header = f"  {'Bln':^4} | {'Setoran Bln':^18} | {'Total Disetor':^18} | {'Total Tabungan':^18} | {'Akum. Bunga':^16}"
     print(header)
     garis("-")
-
     for b in range(1, total_bulan + 1):
         saldo_b       = tabungan_setoran(setoran, bunga_bulanan, b)
         total_setor_b = setoran * b
         akum_bunga    = tabungan_setoran(setoran, bunga_bulanan, b) - setoran * b
         print(f"  {b:^4} | {rp_short(setoran):^18} | {rp_short(total_setor_b):^18} | {rp_short(saldo_b):^18} | {rp_short(akum_bunga):^16}")
-
     garis("-")
     saldo_akhir  = tabungan_setoran(setoran, bunga_bulanan, total_bulan)
     untung_akhir = tabungan_setoran(setoran, bunga_bulanan, total_bulan) - setoran * total_bulan
@@ -25,5 +26,4 @@ def detail_pertumbuhan_setoran(setoran, bunga_bulanan, bunga_tahunan, total_bula
     print(f"  {'TOTAL AKHIR':<8}   {rp_short(setoran):^18}   {rp_short(total_setor):^18}   {rp_short(saldo_akhir):^18}   {rp_short(untung_akhir):^16}")
     garis("=")
     input("\n  Tekan Enter untuk lanjut...")
-
 
